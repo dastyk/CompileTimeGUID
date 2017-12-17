@@ -26,7 +26,7 @@
 
 			GUID() : id(0) {};
 			GUID(HashValue idi) : id(idi) { };
-			GUID(const std::string& str) : id(StringHash::GetHash_ConstexprString(str.c_str(), str.size())) { };
+			GUID(const std::string& str) : id(StringHash::GetHash_ConstexprString(str.c_str(),uint32_t( str.size()))) { };
 			template<std::size_t N>
 			constexpr GUID(const char(&a)[N]) : id(StringHash::GetHash_ConstexprString(a, N)) { };
 			GUID(const GUID& other) : id(other.id) {}
