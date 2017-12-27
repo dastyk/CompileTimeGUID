@@ -494,6 +494,7 @@
 					return g.hash;
 				}
 			};
+			HashValue ID()const { return hash; }
 			template<std::size_t N>
 			constexpr ConstexprStringAndHash(const char(&a)[N]) : string(a) { hash = StringHash::GetHash_ConstexprString(string); };
 			operator const char*()const { return string; };
