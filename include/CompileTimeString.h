@@ -109,7 +109,7 @@
 				for (uint32_t i = 0; i < size; i++)
 				{
 					hash += (static_cast<uint32_t>(toHash[i]) *(i + 1)
-						* s_PrimeTable[static_cast<uint32_t>(toHash[i]) % s_PrimeNumCount]);
+						^ s_PrimeTable[(static_cast<uint32_t>(toHash[i])*0xff1ac3) % s_PrimeNumCount]);
 				}
 				return hash;
 			}
