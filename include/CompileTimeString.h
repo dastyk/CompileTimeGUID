@@ -58,7 +58,7 @@
 				for (uint32_t i = 0; i < size; ++i) {
 					uint8_t value = toHash[i];
 					hash = hash ^ value;
-					hash *= prime;
+					hash *= (s_PrimeTable[(static_cast<uint32_t>(toHash[i]) << 5) % s_PrimeNumCount]);
 				}
 
 				return hash;
